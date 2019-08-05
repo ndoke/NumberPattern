@@ -33,4 +33,29 @@ public class NumberPattern {
         }
         return matrix[nRowNum - 1][nColNum - 1];
     }
+
+    /**
+     * Returns the element at a particular position in a
+     * pattern in an efficient way.
+     *
+     * @param nRowNum row number of the required element
+     * @param nColNum column number of the required element
+     * @return element at a particular position in a pattern
+     */
+    public int getCellVallEfficient(int nRowNum, int nColNum) {
+        int n = nRowNum - 1, r = nColNum - 1;
+        return fact(n) / fact(n - r) / fact(r);
+    }
+
+    private int fact(int n) {
+        if (n == 0) {
+            return 1;
+        }
+
+        int fact = 1;
+        for (int i = 1; i <= n; i++) {
+            fact *= i;
+        }
+        return fact;
+    }
 }
