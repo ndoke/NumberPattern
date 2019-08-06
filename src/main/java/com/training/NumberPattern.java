@@ -20,7 +20,8 @@ public class NumberPattern {
      * @return element at a particular position in a pattern
      */
     public int getCellVall(int nRowNum, int nColNum) {
-        int matrix[][] = new int[nRowNum + 1][nColNum + 1];
+        int dimension = Math.max(nRowNum, nColNum);
+        int matrix[][] = new int[dimension][dimension];
 
         for (int i = 0; i < nRowNum; i++) {
             for (int j = 0; j <= i; j++) {
